@@ -1,0 +1,30 @@
+{
+  "name": "test-bull",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bull": "^4.9.0"
+  },
+  "devDependencies": {
+    "@types/bull": "^3.15.9",
+    "@types/node": "^14.11.2",
+    "gts": "^3.1.1",
+    "ioredis": "^5.2.3",
+    "redis-lock": "^0.1.4",
+    "typescript": "~4.7.0"
+  }
+}
