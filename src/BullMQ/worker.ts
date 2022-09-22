@@ -6,15 +6,17 @@ export class WorkerBullMQ {
     const userQueue = new Worker(
       'data-queue',
       async job => {
-        console.log(job);
-      },
-      {
+        console.log(job.data);
+      }, {
         connection: {
           host: 'redis.develop',
           port: 6379,
         },
-      }
-    );
+        limiter: {
+          max: 10,
+          duration: 1000,
+        }
+      });
     userQueue.on('completed', () => {
       console.log('Job completed');
       return;

@@ -17,6 +17,7 @@ export class ProducerBull {
       await userQueue.add({
         name: `user ${i}`,
         age: `age ${i}`,
+        from: 'Bull'
       });
     }
     console.log('Add data complete');
